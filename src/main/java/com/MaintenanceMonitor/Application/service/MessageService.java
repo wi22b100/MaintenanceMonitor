@@ -23,4 +23,9 @@ public class MessageService {
     public String getFalseMessage() {
         return falseMessage;
     }
+
+    public String resetMessage() {
+        defaultMessage = "Everything works as expected";
+        return "ok";
+    }
 }

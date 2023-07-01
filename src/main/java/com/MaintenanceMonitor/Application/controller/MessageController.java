@@ -29,4 +29,9 @@ public class MessageController {
             return messageService.setMessage(m);
         return messageService.getFalseMessage();
     }
+
+    @GetMapping("/message/reset")
+    public String resetMessage() {
+        return messageService.resetMessage();
+    }
 }
