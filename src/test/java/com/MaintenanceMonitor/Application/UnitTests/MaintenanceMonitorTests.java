@@ -18,6 +18,7 @@ public class MaintenanceMonitorTests {
         String defaultMessage = "Everything works as expected";
 
         // Act
+        messageService.resetMessage();
         String getDefaultMM = messageService.getDefaultMessage();
 
         // Assert
