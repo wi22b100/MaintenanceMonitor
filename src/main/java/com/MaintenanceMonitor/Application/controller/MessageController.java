@@ -4,6 +4,7 @@ import com.MaintenanceMonitor.Application.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,5 +21,12 @@ public class MessageController {
     @GetMapping("/message")
     public String getDefaultMessage() {
         return messageService.getDefaultMessage();
+    }
+
+    @GetMapping("/message/set")
+    public String setMessage(@RequestParam(required=true) String m) {
+        if(!m.isEmpty() && !m.isBlank())
+            return messageService.setMessage(m);
+        return messageService.getFalseMessage();
     }
 }
